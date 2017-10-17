@@ -1,5 +1,5 @@
-FROM amazonlinux:2016.09
-MAINTAINER Outsider <outsideris@gmail.com>
+FROM amazonlinux:2017.03
+# MAINTAINER Outsider <outsideris@gmail.com>
 
 # ref: https://medium.com/@marco.luethy/running-headless-chrome-on-aws-lambda-fa82ad33a9eb
 RUN printf "LANG=en_US.utf-8\nLC_ALL=en_US.utf-8" >> /etc/environment
@@ -20,7 +20,7 @@ RUN yum install -y \
     zlib.i686 httpd mod_ssl php php-cli python-psutil wdiff --enablerepo=epel
 
 # ref: https://chromium.googlesource.com/chromium/src.git/+refs
-ENV CHROMIUM_VERSION 61.0.3114.0
+ENV CHROMIUM_VERSION 64.0.3242.2
 
 # install dept_tools
 WORKDIR /chrome
